@@ -14,13 +14,13 @@ import store from 'stores';
 const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
-    <Provider store={store}>
-      <Router history={history}>
-        <Route path="/" component={App}>
-          <Route path="login" component={Login}/>
-          <Route path="top" component={Top}/>
-        </Route>
-      </Router>
-    </Provider>,
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={App}>
+        <Route path="login" component={Login}/>
+        <Route path="top" component={Top}/>
+      </Route>
+    </Router>
+  </Provider>,
   document.getElementById('main')
 );
