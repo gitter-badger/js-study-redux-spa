@@ -6,6 +6,7 @@ import { Route, Router, hashHistory } from 'react-router';
 import App from 'pages/app';
 import Top from 'pages/top';
 import Login from 'pages/login';
+import Menu from 'components/menu';
 
 import store from 'store';
 
@@ -16,8 +17,12 @@ class Root extends Component {
       <Provider store={store}>
         <Router history={hashHistory}>
           <Route path="/" component={App}/>
+
           <Route path="/login" component={Login}/>
-          <Route path="/top" component={Top}/>
+
+          <Route path="*" component={Menu}>
+            <Route path="/top" component={Top}/>
+          </Route>
         </Router>
       </Provider>
     )
