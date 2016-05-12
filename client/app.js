@@ -1,26 +1,34 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-import { Provider } from 'react-redux'
-import { Router, Route, browserHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { Route } from 'react-router';
+import { reduxReactRouter, ReduxRouter } from 'redux-router';
+import createHistory from 'history/lib/createHashHistory';
 
 import App from 'pages/app';
 import Top from 'pages/top';
 import Login from 'pages/login';
 
-import store from 'stores';
+import reducer from 'reducers';
 
-const history = syncHistoryWithStore(browserHistory, store)
-
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <Route path="/" component={App}>
-        <Route path="login" component={Login}/>
-        <Route path="top" component={Top}/>
-      </Route>
-    </Router>
-  </Provider>,
-  document.getElementById('main')
+const routes = (
+  <Route path="/" component={App}>
+    <Route path="login" component={Login}/>
+    <Route path="top" component={Top}/>
+  </Route>
 );
+
+const store = reduxReactRouter({routes, createHistory})(createStore)(reducer);
+
+class Root extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <ReduxRouter />
+      </Provider>
+    )
+  }
+}
+
+render(<Root />, document.getElementById('main'));

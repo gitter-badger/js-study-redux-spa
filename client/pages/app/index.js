@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>main</h1>
-        <Link to='login'>Login</Link>
+        <Link to='/login'>Login</Link>
       </div>
     );
   }
