@@ -14,6 +14,10 @@ module.exports = {
           presets: ['es2015', 'react'],
           plugins: ['transform-decorators-legacy']
         }
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader'
       }
     ]
   },

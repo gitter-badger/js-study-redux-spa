@@ -10,6 +10,8 @@ import Menu from 'components/menu';
 
 import store from 'store';
 
+import './style.styl';
+
 class Root extends Component {
     
   render() {
