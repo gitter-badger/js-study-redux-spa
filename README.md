@@ -1,5 +1,28 @@
 # js-study-redux-spa
-途中です
+React + Redux + React Router, Single Page Application sample.
 
-## TODO
-* サイドバー的な
+## Setup
+
+```
+$ git clone https://github.com/KeitaMoromizato/js-study-redux-spa
+$ cd js-study-redux-spa
+$ npm i
+```
+
+## Run
+
+```
+$ npm start
+```
+
+## Stack
+
+* [React](https://github.com/facebook/react)
+* [Redux](https://github.com/reactjs/redux)
+* [React Router](https://github.com/reactjs/react-router)
+* [Webpack](https://github.com/webpack)
+* [Babel](https://github.com/babel/babel)
+* [Stylus](https://github.com/stylus/stylus)
+
+## Lisence
+MIT

@@ -1,8 +1,7 @@
 {
   "name": "js-study-redux-spa",
   "version": "1.0.0",
-  "private": true,
-  "description": "",
+  "description": "React + Redux + React Router, Single Page Application sample.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
@@ -10,6 +9,13 @@
     "start": "npm run watch & http-server"
   },
   "author": "Keita Moromizato <keita.moromi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KeitaMoromizato/js-study-redux-spa"
+  },
+  "keywords": [
+    "React", "Redux", "React Router", "SPA"
+  ],
   "license": "MIT",
   "dependencies": {
     "react": "^15.0.2",
