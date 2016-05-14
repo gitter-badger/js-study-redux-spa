@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { Route, Router, hashHistory } from 'react-router';
+import { Route, Router, hashHistory, Redirect } from 'react-router';
 
 import App from 'pages/app';
 import Top from 'pages/top';
@@ -18,6 +18,7 @@ class Root extends Component {
     return (
       <Provider store={store}>
         <Router history={hashHistory}>
+          <Redirect path="/" to="/login" />
           <Route path="/" component={App}/>
 
           <Route path="/login" component={Login}/>
