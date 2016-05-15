@@ -3,6 +3,13 @@ import { Link } from 'react-router';
 
 import { connect } from 'react-redux';
 
+import * as LoginAction from 'actionCreator/login';
+import { bindActionCreators } from 'redux';
+
+@connect(
+  state => state,
+  dispatch => bindActionCreators(LoginAction, dispatch)
+)
 export default class Login extends Component {
   
   static contextTypes = {
@@ -16,7 +23,10 @@ export default class Login extends Component {
     
     if (!username) return;
     
-    this.context.router.push('/top');
+    console.log("login");
+    this.props.login();
+    
+//    this.context.router.push('/top');
   }
   
   render() {
