@@ -7,7 +7,7 @@ import * as LoginAction from 'actionCreator/login';
 import { bindActionCreators } from 'redux';
 
 @connect(
-  state => state,
+  state => state.login,
   dispatch => bindActionCreators(LoginAction, dispatch)
 )
 export default class Login extends Component {
@@ -23,10 +23,13 @@ export default class Login extends Component {
     
     if (!username) return;
     
-    console.log("login");
     this.props.login();
-    
-//    this.context.router.push('/top');
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.info.loggedin) {
+      this.context.router.push('/top');
+    }
   }
   
   render() {

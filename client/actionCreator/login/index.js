@@ -1,12 +1,16 @@
-export const login = () => {
-  console.log("login action");
+export const ACTION_LOGGED_IN = 'LOGIN_ACTION.LOGGED_IN';
+
+export const login = (username) => {
+
   return (dispatch) => {
-    console.log("login action start",dispatch);
+
     setTimeout(() => {
-      console.log("will dispatch");
+
       dispatch({
-        type: 'hogehoge',
-        data: "dataaaa"
+        type: ACTION_LOGGED_IN,
+        info : {
+          username: username
+        }
       });
     }, 1000);
   };

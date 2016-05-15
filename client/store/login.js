@@ -1,7 +1,17 @@
 import { combineReducers } from 'redux';
 
-function test(state = {}, action) {
+import { ACTION_LOGGED_IN } from 'actionCreator/login';
+
+function info(state = {}, action) {
+  switch (action.type) {
+    case ACTION_LOGGED_IN:
+      return Object.assign({}, state, {
+        usename: action.info.username,
+        loggedin: true
+      });
+  }
+  
   return state;
 }
 
-export default combineReducers({ test });
+export default combineReducers({ info });
