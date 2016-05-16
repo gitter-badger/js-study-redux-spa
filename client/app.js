@@ -21,10 +21,10 @@ class Root extends Component {
           <Redirect path="/" to="/login" />
           <Route path="/" component={App}/>
 
-          <Route path="/login" component={Login}/>
+          <Route path="login" component={Login}/>
 
-          <Route path="*" component={Menu}>
-            <Route path="/top" component={Top}/>
+          <Route component={Menu}>
+            <Route path="top" component={Top}/>
           </Route>
         </Router>
       </Provider>

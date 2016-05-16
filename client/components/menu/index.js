@@ -14,6 +14,8 @@ export default class Menu extends Component {
           <li><Link to='/login'>Login</Link></li>
           <li><Link to='/top'>Top</Link></li>
         </nav>
+        
+        {this.props.children}
       </div>
     );
   }
