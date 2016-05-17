@@ -6,7 +6,7 @@ import { Route, Router, hashHistory, Redirect } from 'react-router';
 import App from 'pages/app';
 import Top from 'pages/top';
 import Login from 'pages/login';
-import Menu from 'components/menu';
+import Base from 'pages/base';
 
 import store from 'store';
 
@@ -23,7 +23,7 @@ class Root extends Component {
 
           <Route path="login" component={Login}/>
 
-          <Route component={Menu}>
+          <Route component={Base}>
             <Route path="top" component={Top}/>
           </Route>
         </Router>
