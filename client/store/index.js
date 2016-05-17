@@ -3,9 +3,11 @@ import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 
 import login from './login';
+import common from './common';
 
 const reducer = combineReducers({
-  login
+  login,
+  common
 });
 
 export default createStore(reducer, {}, applyMiddleware(thunkMiddleware, createLogger()));

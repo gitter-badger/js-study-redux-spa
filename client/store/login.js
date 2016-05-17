@@ -6,7 +6,7 @@ function info(state = {}, action) {
   switch (action.type) {
     case ACTION_LOGGED_IN:
       return Object.assign({}, state, {
-        usename: action.info.username,
+        usename: action.username,
         loggedin: true
       });
   }

@@ -18,13 +18,15 @@ class Root extends Component {
     return (
       <Provider store={store}>
         <Router history={hashHistory}>
-          <Redirect path="/" to="/login" />
-          <Route path="/" component={App}/>
+          <Route path="/" component={App} >
 
-          <Route path="login" component={Login}/>
+            <Route path="login" component={Login}/>
 
-          <Route component={Base}>
-            <Route path="top" component={Top}/>
+            <Route component={Base}>
+              <Route path="top" component={Top}/>
+            </Route>
+            
+            <Route path="*" component={Login} />
           </Route>
         </Router>
       </Provider>

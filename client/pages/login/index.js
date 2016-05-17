@@ -19,19 +19,13 @@ export default class Login extends Component {
   onClick(e) {
     e.preventDefault();
     
-    const username = this.refs.username;
+    const username = this.refs.username.value;
     
     if (!username) return;
     
-    this.props.login();
+    this.props.login(username);
   }
-  
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.info.loggedin) {
-      this.context.router.push('/top');
-    }
-  }
-  
+    
   render() {
     return (
       <div>

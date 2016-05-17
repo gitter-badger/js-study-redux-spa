@@ -8,10 +8,9 @@ export const login = (username) => {
 
       dispatch({
         type: ACTION_LOGGED_IN,
-        info : {
-          username: username
-        }
+        username: username
       });
+
     }, 1000);
   };
 };
