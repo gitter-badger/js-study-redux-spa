@@ -25,7 +25,13 @@ export default class Login extends Component {
     
     this.props.login(username);
   }
-    
+  
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.info.loggedin) {
+      this.context.router.push('/top');
+    }
+  }
+  
   render() {
     return (
       <div>

@@ -18,26 +18,11 @@ export default class App extends Component {
   componentDidMount() {
     this.authorizeUser(this.props.user);
   }
-  
-  componentWillReceiveProps(nextProps) {
-//    this.authorizeUser(nextProps.user, this.props.route.path, nextProps.route.path);
-  }
-  
-  componentDidUpdate() {
-    this.authorizeUser(this.props.user);
-  }
-    
+
   authorizeUser(user, currentRoute, nextRoute) {
-    console.log(user);
-    
     if (!user) {
       this.context.router.push('/login');
     }
-    /*
-    if (!user && currentRoute !== '/login' && nextRoute !== '/login') {
-      this.context.router.push('/login');
-    }
-    */
   }
   
   render() {
