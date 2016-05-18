@@ -20,6 +20,30 @@ export default class App extends Component {
   componentDidMount() {
     this.authorizeUser(this.props.user);
   }
+  
+  componentWillReceiveProps(nextProps) {
+    console.log("componentWillReceiveProps");
+    console.log(this.props.user, this.props.route.path, nextProps.user, nextProps.route.path);
+  }
+  
+  componentWillUpdate(nextProps, nextState) {
+    console.log("componentWillUpdate");
+    console.log(this.props.user, this.props.route.path, nextProps.user, nextProps.route.path);
+    console.log(nextState);
+    console.log("==================");
+  }
+  
+  componentDidUpdate(prevProps, prevState) {
+    const loggedOut = !this.props.user && prevProps.user;
+    
+    if (loggedOut) {
+      this.context.router.push('/login');
+    }
+    
+    console.log("componentDidUpdate");
+    console.log(this.props.user, this.props.route.path, prevProps.user, prevProps.route.path);
+    console.log("==================");
+  }
 
   authorizeUser(user, currentRoute, nextRoute) {
     if (!user) {

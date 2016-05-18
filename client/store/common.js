@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 
-import { ACTION_LOGGED_IN, ACTION_LOGGOUT } from 'actionCreator/login';
+import { ACTION_LOGGED_IN_SUCCESS, ACTION_LOGOUT_SUCCESS } from 'actionCreator/login';
 
 function user(state = '', action) {
   switch (action.type) {
-    case ACTION_LOGGED_IN:
+    case ACTION_LOGGED_IN_SUCCESS:
       return action.username;
     
-    case ACTION_LOGGOUT:
+    case ACTION_LOGOUT_SUCCESS:
       return '';
   }
 
