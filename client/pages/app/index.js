@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import * as LoginAction from 'actionCreator/login';
 import { bindActionCreators } from 'redux';
 
+import './style.styl';
+
 @connect(
   state => state.common,
   dispatch => bindActionCreators(LoginAction, dispatch)
@@ -27,12 +29,9 @@ export default class App extends Component {
   
   render() {
     return (
-      <div>
+      <div id="page">
         { this.props.children }
       </div>
     );
   }
 }
-
-// * => Login
-// login => /

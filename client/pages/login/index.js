@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 
 import { connect } from 'react-redux';
 
 import * as LoginAction from 'actionCreator/login';
-import { bindActionCreators } from 'redux';
 
 @connect(
   state => state.login,
@@ -27,7 +27,7 @@ export default class Login extends Component {
   }
   
   componentWillReceiveProps(nextProps) {
-    if (nextProps.info.loggedin) {
+    if (nextProps.loggedin) {
       this.context.router.push('/top');
     }
   }

@@ -1,17 +1,14 @@
 import { combineReducers } from 'redux';
 
-import { ACTION_LOGGED_IN } from 'actionCreator/login';
+import { ACTION_LOGGED_IN_SUCCESS } from 'actionCreator/login';
 
-function info(state = {}, action) {
+function loggedin(state = false, action) {
   switch (action.type) {
-    case ACTION_LOGGED_IN:
-      return Object.assign({}, state, {
-        usename: action.username,
-        loggedin: true
-      });
+    case ACTION_LOGGED_IN_SUCCESS:
+      return true;
   }
   
   return state;
 }
 
-export default combineReducers({ info });
+export default combineReducers({ loggedin });
