@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import { ACTION_LOGGED_IN_SUCCESS, ACTION_LOGOUT_SUCCESS } from 'actionCreator/login';
 
-function user(state = '', action) {
+export function user(state = '', action) {
   switch (action.type) {
     case ACTION_LOGGED_IN_SUCCESS:
       return action.username;
