@@ -5,6 +5,7 @@ import { Route, Router, hashHistory, Redirect } from 'react-router';
 
 import App from 'pages/app';
 import Top from 'pages/top';
+import Todo from 'pages/todo';
 import Login from 'pages/login';
 import Base from 'pages/base';
 
@@ -24,6 +25,7 @@ class Root extends Component {
 
             <Route component={Base}>
               <Route path="top" component={Top}/>
+              <Route path="todo" component={Todo}/>
             </Route>
             
             <Route path="*" component={Login} />

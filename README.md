@@ -1,5 +1,5 @@
 # js-study-redux-spa
-React + Redux + React Router, Single Page Application sample.
+React/Redux/Rect RouterでSingle Page Applicationを作るサンプル。
 
 ## Setup
 
@@ -23,6 +23,9 @@ $ npm start
 * [Webpack](https://github.com/webpack)
 * [Babel](https://github.com/babel/babel)
 * [Stylus](https://github.com/stylus/stylus)
+
+## 解説
+
 
 ## Lisence
 MIT

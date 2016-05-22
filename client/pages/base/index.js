@@ -24,6 +24,7 @@ export default class Base extends Component {
           <h2>MENU</h2>
           <nav>
             <li><Link to='/top'>Top</Link></li>
+            <li><Link to='/todo'>Todo</Link></li>
           </nav>
           <nav className="logout">
             <li onClick={() => this.logout()}>>> Logout</li>

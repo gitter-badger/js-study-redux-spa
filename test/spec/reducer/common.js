@@ -20,5 +20,4 @@ describe('Common Reducer', function() {
       assert(state === usernamem);
     });
   });
-
 });
