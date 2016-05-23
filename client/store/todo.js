@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import { ACTION_ADD_TODO } from 'actionCreator/todo';
 
-function todos(state = [], action) {
+export function todos(state = [], action) {
   switch (action.type) {
     case ACTION_ADD_TODO:
       return [...state, action.todo];
